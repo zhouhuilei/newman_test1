@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "a79d9dfe-54c9-4b44-a927-1f3ce00dc4d0",
+		"name": "newman_test1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "credits_page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5d8c8c8-7d88-43d7-b686-4d9c9aae61e2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"status==1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(1);\r",
+							"});\r",
+							"pm.test(\"code=ok\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include('\"result\":{\"credits_page\":{\"code\":\"ok\"');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.160.67.117:10380/user/configs?serv_ver=1&from=inner&product_id=fr9H6hncTEmpn8AJjYairg&time_stamp=1493714006&resources=[{\"name\":\"credits_page\",\"sig\":\"2a845f1a6ac1aac726a1d28614b65b2\",\"id\":\"huodong\"}]&appinfo={\"dev_info\":{\"mid\":\"e3dfzhl0807iostestuser0\",\"xid\":\"337bzhl0807iostestuser0\",\"imsi\":\"2342354538975893457348957\",\"imei\":\"34jk4hhjkdfy89u45\",\"idfa\":\"\",\"model\":\"samsuangnote7\",\"screen_width\":\"180\"},\"env_info\":{\"product\":\"sgsapp\",\"os\":\"ios\",\"os_ver\":\"21\",\"app_ver\":\"6.9.0\",\"distribution\":\"5100\",\"network\":\"1\",\"carrier\":\"mobile\",\"location\":\"116.332,39.994\",\"ip\":\"127.0.0.1\"},\"login_user\":true,\"sogou_passport_info\":{\"userid\":\"zhouhuilei@qq.sohu.com\",\"sgid\":\"sgidsdfsdfsdafas\",\"nickname\":\"nickname_pingan\",\"image_url\":\"http://sa.sogou.com/wxpage/images/ttnews_logo.png\"}}&sign=noneedencode85",
+					"protocol": "http",
+					"host": [
+						"10",
+						"160",
+						"67",
+						"117"
+					],
+					"port": "10380",
+					"path": [
+						"user",
+						"configs"
+					],
+					"query": [
+						{
+							"key": "serv_ver",
+							"value": "1"
+						},
+						{
+							"key": "from",
+							"value": "inner"
+						},
+						{
+							"key": "product_id",
+							"value": "fr9H6hncTEmpn8AJjYairg"
+						},
+						{
+							"key": "time_stamp",
+							"value": "1493714006"
+						},
+						{
+							"key": "resources",
+							"value": "[{\"name\":\"credits_page\",\"sig\":\"2a845f1a6ac1aac726a1d28614b65b2\",\"id\":\"huodong\"}]"
+						},
+						{
+							"key": "appinfo",
+							"value": "{\"dev_info\":{\"mid\":\"e3dfzhl0807iostestuser0\",\"xid\":\"337bzhl0807iostestuser0\",\"imsi\":\"2342354538975893457348957\",\"imei\":\"34jk4hhjkdfy89u45\",\"idfa\":\"\",\"model\":\"samsuangnote7\",\"screen_width\":\"180\"},\"env_info\":{\"product\":\"sgsapp\",\"os\":\"ios\",\"os_ver\":\"21\",\"app_ver\":\"6.9.0\",\"distribution\":\"5100\",\"network\":\"1\",\"carrier\":\"mobile\",\"location\":\"116.332,39.994\",\"ip\":\"127.0.0.1\"},\"login_user\":true,\"sogou_passport_info\":{\"userid\":\"zhouhuilei@qq.sohu.com\",\"sgid\":\"sgidsdfsdfsdafas\",\"nickname\":\"nickname_pingan\",\"image_url\":\"http://sa.sogou.com/wxpage/images/ttnews_logo.png\"}}"
+						},
+						{
+							"key": "sign",
+							"value": "noneedencode85"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
